@@ -1,0 +1,87 @@
+body,html {
+    margin: 0em;
+    background-color:
+}
+
+section {
+    height: 100vh;
+    text-align: left;
+    margin-left: 3em;
+}
+
+ul {
+    list-style: none;
+    display: inline-block;
+    margin: 0 auto;
+    width: 40em;
+}
+h1 {
+    font-family: sans-serif;
+}
+
+li {
+    background-color: white;
+    margin: 0.6em;
+    font-family: sans-serif;
+    color: blueviolet;
+    display: block;
+    width: auto;
+    height: 3em;
+    padding: 1.25em 8.25em;
+    box-shadow: 0.1em 0.1em 0.5em 0.1em lightgray;
+    text-align: left;
+    font-weight: 300;
+    transition: 0.3s;
+    line-height: 3em;
+}
+
+
+
+li:hover {
+    cursor: move;
+    border-bottom: 2px solid black;
+}
+
+li.dragging {
+    opacity: 0.3;
+}
+
+h1 {
+    margin-left: 2.1em;
+    margin-top: 1em;
+    margin-bottom: 0em;
+}
+
+li button {
+    -webkit-appearance: none;
+    background-image: url(../images/media-play.png);
+    background-color: transparent;
+    border: 0;
+    height: 2.5em;
+    width: 2.5em;
+    background-repeat: no-repeat;
+    background-size: 4em;
+    background-position: center center;
+    float: right;
+    margin-top: .8em;
+}
+
+li button:hover {
+    -webkit-appearance: none;
+    transform: scale(1.1);
+}
+
+li button.pause {
+    -webkit-appearance: none;
+    background-image: url(../images/media-pause.png);
+    background-size: 3em;
+}
+
+li img {
+    width: 4em;
+    height: 4em;
+    float: left;
+    margin-right: 4em;
+    margin-top: -0.6em;
+    border-bottom:3px solid blueviolet;
+}
