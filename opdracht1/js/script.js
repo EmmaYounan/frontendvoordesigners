@@ -106,8 +106,14 @@ function init() {
             e.target.classList.add("dragging");
         });
         item.addEventListener("dragenter", function (e) {
+            //The stopPropagation() method of the Event interface prevents further propagation of the current event in the capturing and bubbling phases.
             e.stopPropagation();
-            if (dragEl === e.target) return;
+            //als het op dezelfde element is dan gebeurt niks, Propagation means bubbling up to parent elements or capturing down to child elements.
+
+
+            if (dragEl === e.target) {
+                return;
+            }
             var self = e.target;
             if (isBefore(self, dragEl)) {
                 moveElements(self, dragEl);
@@ -122,6 +128,7 @@ function init() {
 }
 
 function moveElements(first, second, after = false) {
+    //The Element.getBoundingClientRect() method returns the size of an element and its position relative to the viewport.
     var firstDim = first.getBoundingClientRect();
     var secondDim = second.getBoundingClientRect();
     var distance = firstDim.height - firstDim.top - (secondDim.height - secondDim.top);
@@ -131,6 +138,8 @@ function moveElements(first, second, after = false) {
 
     let listener = first.addEventListener('transitionend', () => {
         first.style.transition = 'none';
+        //een manier om if else te schrijven
+        //The Node.insertBefore() method inserts a node before the reference node as a child of a specified parent node. If the given child is a reference to an existing node in the document, insertBefore() moves it from its current position to the new position (there is no requirement to remove the node from its parent node before appending it to some other node).
         !after ? first.parentNode.insertBefore(first, second) : first.parentNode.insertBefore(second, first);
         first.style.transform = "translateY(0px)";
         first.removeEventListener('transitionend', listener);
