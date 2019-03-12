@@ -1,12 +1,14 @@
-body,html {
-    margin: 0em;
-    background-color:
+body,
+html {
+    margin: 0 auto;
+    ;
+    display: flex;
+    transition: all 1s;
 }
 
-section {
+section:nth-of-type(1) {
     height: 100vh;
     text-align: left;
-    margin-left: 3em;
 }
 
 ul {
@@ -14,28 +16,33 @@ ul {
     display: inline-block;
     margin: 0 auto;
     width: 40em;
+    padding-left: 0em;
 }
+
 h1 {
     font-family: sans-serif;
+    transition: all 1s;
+    margin-top: 2em;
+    margin-bottom: 0.3em;
+    padding-left: 0.4em;
 }
 
 li {
     background-color: white;
     margin: 0.6em;
-    font-family: sans-serif;
-    color: blueviolet;
     display: block;
     width: auto;
     height: 3em;
-    padding: 1.25em 8.25em;
+    padding: 1.25em 7.25em;
     box-shadow: 0.1em 0.1em 0.5em 0.1em lightgray;
     text-align: left;
     font-weight: 300;
     transition: 0.3s;
     line-height: 3em;
+    display: flex;
+    justify-content: space-between;
+    transition: all 1s;
 }
-
-
 
 li:hover {
     cursor: move;
@@ -44,12 +51,6 @@ li:hover {
 
 li.dragging {
     opacity: 0.3;
-}
-
-h1 {
-    margin-left: 2.1em;
-    margin-top: 1em;
-    margin-bottom: 0em;
 }
 
 li button {
@@ -62,7 +63,6 @@ li button {
     background-repeat: no-repeat;
     background-size: 4em;
     background-position: center center;
-    float: right;
     margin-top: .8em;
 }
 
@@ -80,8 +80,167 @@ li button.pause {
 li img {
     width: 4em;
     height: 4em;
-    float: left;
-    margin-right: 4em;
     margin-top: -0.6em;
-    border-bottom:3px solid blueviolet;
+    border-bottom: 3px solid blueviolet;
+    transition: all 1s;
+}
+
+body section:nth-of-type(2) {
+    margin-top: 5.6em;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5em;
+}
+
+body section:nth-of-type(2) h2 {
+    font-family: sans-serif;
+    font-size: 1.3em;
+    margin-top: 0em;
+    color: blueviolet;
+    transition: all 1s;
+    margin-bottom: 1.5em;
+}
+
+body section:nth-of-type(2) span:nth-of-type(1) p:nth-of-type(1) {
+    margin-bottom: 0.7em;
+}
+
+body section:nth-of-type(2) span:nth-of-type(1) p:nth-of-type(2) {
+    margin-top: 0.7em;
+    color: black;
+    font-size: 0.8em;
+}
+
+body section:nth-of-type(2) > p {
+    font-family: sans-serif;
+    font-size: 0.8em;
+    margin-top: 0em;
+}
+
+body section:nth-of-type(2) button {
+    height: 4em;
+    width: 10em;
+    background-color: transparent;
+    border: none;
+    box-shadow: 0.1em 0.1em 0.5em 0.1em lightgray;
+    background-image: url(../images/sun.png);
+    background-repeat: no-repeat;
+    background-position: 1em;
+    background-size: 3em;
+    transition: all 1s;
+}
+
+body section:nth-of-type(2) button:focus {
+    background-color: darkgray;
+}
+
+body section:nth-of-type(2) button:hover {
+    background-color: darkgray;
+}
+
+body section:nth-of-type(2) label {
+    color: blueviolet;
+    font-family: sans-serif;
+    transition: all 1s;
+}
+
+section:nth-of-type(1) ul li p {
+    font-family: sans-serif;
+    color: blueviolet;
+    font-size: 14px;
+    text-align: left;
+    width: 14em;
+    height: 2em;
+    margin-right: auto;
+    margin-left: 1em;
+    margin-bottom: 2em;
+    margin-top: auto;
+    transition: all 1s;
+}
+
+body section:nth-of-type(2) span:nth-of-type(2) {
+    display: flex;
+    justify-content: space-between;
+    width: 11em;
+    margin-top: 3em;
+}
+
+body section:nth-of-type(2) span p {
+    color: blueviolet;
+    font-family: sans-serif;
+    transition: all 1s;
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+input[type=range] {
+    height: 3em;
+}
+
+body.night {
+    background-color: black;
+    transition: all 1s;
+}
+
+body.night h1 {
+    color: whitesmoke;
+    transition: all 1s;
+}
+
+body.night li {
+    background-color: blueviolet;
+    transition: all 1s;
+    box-shadow: 0.1em 0.1em 0.5em 0.1em darkviolet;
+}
+
+body.night section:nth-of-type(1) ul li p {
+    color: whitesmoke;
+    transition: all 1s;
+}
+
+
+body.night section:nth-of-type(2) span p {
+    color: whitesmoke;
+    transition: all 1s;
+}
+
+body.night li img {
+    border-bottom: 3px solid whitesmoke;
+    transition: all 1s;
+}
+
+body.night section:nth-of-type(2) h2 {
+    color: whitesmoke;
+    transition: all 1s;
+}
+
+body.night section:nth-of-type(2) label {
+    color: whitesmoke;
+    transition: all 1s;
+}
+
+body.night section:nth-of-type(2) button {
+    height: 4em;
+    width: 10em;
+    background-color: blueviolet;
+    border: none;
+    box-shadow: 0.1em 0.1em 0.5em 0.1em darkviolet;
+    background-image: url(../images/moon.png);
+    background-repeat: no-repeat;
+    background-position: 6em;
+    background-size: 3em;
+    transition: all 1s;
+}
+
+body.night li:hover {
+    cursor: move;
+    border-bottom: 2px solid whitesmoke;
+}
+
+body.night section:nth-of-type(2) span:nth-of-type(1) p:nth-of-type(2) {
+    color: whitesmoke;
+}
+
+body.night section:nth-of-type(2) > p {
+    color: whitesmoke;
 }

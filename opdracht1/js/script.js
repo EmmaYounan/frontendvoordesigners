@@ -13,58 +13,107 @@ var japan = document.querySelector('body audio:nth-of-type(3)');
 var wall = document.querySelector('body audio:nth-of-type(4)');
 var beautiful = document.querySelector('body audio:nth-of-type(5)');
 var girls = document.querySelector('body audio:nth-of-type(6)');
+var range = document.querySelector('body section:nth-of-type(2) input');
+var songTitel = document.querySelectorAll('body section:nth-of-type(1) ul li p');
+var fontSize = document.querySelector('body section:nth-of-type(2) > span:nth-of-type(2) p');
+var nightButton = document.querySelector('body section:nth-of-type(2) span:nth-of-type(1) button');
+var body = document.querySelector('body');
+var infoOne = document.querySelector('body section:nth-of-type(2) span p:nth-of-type(2)');
+console.log(infoOne);
+var status = 1;
+
+range.addEventListener("input", function () {
+    for (var i = 0; i < songTitel.length; i++) {
+        songTitel[i].style.fontSize = this.value + 'px';
+    }
+    fontSize.innerText = range.value + ' px';
+});
+
+
+window.addEventListener("keydown", function (e) {
+    if (e.code == "ArrowRight" || e.code == "ArrowLeft") {
+        range.focus();
+    }
+    console.log(e);
+    for (var i = 0; i < songTitel.length; i++) {
+        songTitel[i].style.fontSize = this.value + 'px';
+    }
+    fontSize.innerText = range.value + ' px';
+}, true);
+
+window.addEventListener("keydown", function (e) {
+    if (e.code == "KeyN") {
+        body.classList.toggle('night');
+        if (status == 1) {
+            infoOne.innerHTML = 'You can use the N button to return to day vision';
+            status = 2;
+            return status;
+        } else if (status == 2) {
+            infoOne.innerHTML = 'You can use the N button for night vision';
+            status = 1;
+            return status;
+        }
+    }
+}, true);
+
+nightButton.addEventListener('click', function () {
+    body.classList.toggle('night');
+    if (status == 1) {
+        infoOne.innerHTML = 'You can click the N button to return to day vision';
+        status = 2;
+        return status;
+    } else if (status == 2) {
+        infoOne.innerHTML = 'You can use the N button for night vision';
+        status = 1;
+        return status;
+    }
+});
 
 
 function versaceSong() {
-    if (versacePlay.classList.value == '' ) {
+    if (versacePlay.classList.value == '') {
         versace.play();
-    }
-    else {
+    } else {
         versace.pause();
     }
 }
 
 function crazySong() {
-    if (crazyPlay.classList.value == '' ) {
+    if (crazyPlay.classList.value == '') {
         crazy.play();
-    }
-    else {
+    } else {
         crazy.pause();
     }
 }
 
 function japanSong() {
-    if (japanPlay.classList.value == '' ) {
+    if (japanPlay.classList.value == '') {
         japan.play();
-    }
-    else {
+    } else {
         japan.pause();
     }
 }
 
 function wallSong() {
-    if (wallPlay.classList.value == '' ) {
+    if (wallPlay.classList.value == '') {
         wall.play();
-    }
-    else {
+    } else {
         wall.pause();
     }
 }
 
 function beautifulSong() {
-    if (beautifulPlay.classList.value == '' ) {
+    if (beautifulPlay.classList.value == '') {
         beautiful.play();
-    }
-    else {
+    } else {
         beautiful.pause();
     }
 }
 
 function girlsSong() {
-    if (girlsPlay.classList.value == '' ) {
+    if (girlsPlay.classList.value == '') {
         girls.play();
-    }
-    else {
+    } else {
         girls.pause();
     }
 }
@@ -77,11 +126,11 @@ beautifulPlay.addEventListener('click', beautifulSong);
 girlsPlay.addEventListener('click', girlsSong);
 
 
-    for (var i = 0; i < playButton.length; i++) {
-        playButton[i].addEventListener('click', function(){
-            this.classList.toggle('pause');
-        });
-    }
+for (var i = 0; i < playButton.length; i++) {
+    playButton[i].addEventListener('click', function () {
+        this.classList.toggle('pause');
+    });
+}
 
 
 function isBefore(a, b) {
@@ -150,4 +199,3 @@ init();
 
 //Bron:
 //BY Parminder Singh
-
