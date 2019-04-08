@@ -1,0 +1,163 @@
+section {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    grid-gap: 2em;
+    margin: 3em;
+    margin-top: 0em;
+}
+
+article {
+    background-color: white;
+    box-shadow: 0.1em 0.1em 0.5em 0.1em lightgray;
+    padding: 1em;
+    margin: 1em;
+    position: relative;
+    padding-left: 2em;
+    padding-right: 2em;
+    opacity: 0;
+    transition: all 1s;
+}
+
+article.show {
+    opacity: 1;
+    transition: all 1s;
+}
+
+article:nth-of-type(1),
+article:nth-of-type(2) {
+    opacity: 1;
+}
+
+article:hover {
+    border-bottom: 4px solid blueviolet;
+}
+
+article:focus {
+    border-bottom: 4px solid blueviolet;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0em;
+    margin-top: 0em;
+    font-family: sans-serif;
+    margin-top: 1.3em;
+}
+
+section article p:first-of-type {
+    margin-bottom: 5em;
+    font-family: sans-serif;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+section article p:last-of-type {
+    bottom: 1em;
+    position: absolute;
+    color: blueviolet;
+    font-size: 1em;
+}
+
+section article h2 {
+    font-family: sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 4em;
+    margin-right: 4em;
+    margin-top: 2em;
+}
+
+header span {
+    display: flex;
+    flex-direction: column;
+}
+
+body header button {
+    height: 4em;
+    width: 10em;
+    background-color: transparent;
+    border: none;
+    box-shadow: 0.1em 0.1em 0.5em 0.1em lightgray;
+    background-image: url(../images/sun.png);
+    background-repeat: no-repeat;
+    background-position: 1em;
+    background-size: 3em;
+    transition: all 1s;
+}
+
+body header button:focus {
+    background-color: darkgray;
+}
+
+body header button:hover {
+    background-color: darkgray;
+}
+
+
+header span p {
+    font-family: sans-serif;
+    font-size: 0.8em;
+    width: 10em;
+    line-height: 1.4em;
+}
+
+
+body.night {
+    background-color: black;
+    transition: all 1s;
+}
+
+body.night h1 {
+    color: whitesmoke;
+    transition: all 1s;
+}
+
+body.night article {
+    background-color: blueviolet;
+    transition: all 1s;
+    box-shadow: 0.1em 0.1em 0.5em 0.1em darkviolet;
+}
+
+body.night article p {
+    color: whitesmoke;
+    transition: all 1s;
+}
+
+
+body.night header span p {
+    color: whitesmoke;
+    transition: all 1s;
+}
+
+body.night article h2 {
+    color: whitesmoke;
+    transition: all 1s;
+}
+
+body.night section article p {
+    color: whitesmoke;
+}
+
+body.night header button {
+    height: 4em;
+    width: 10em;
+    background-color: blueviolet;
+    border: none;
+    box-shadow: 0.1em 0.1em 0.5em 0.1em darkviolet;
+    background-image: url(../images/moon.png);
+    background-repeat: no-repeat;
+    background-position: 6em;
+    background-size: 3em;
+    transition: all 1s;
+}
+
+body.night article:hover {
+    border-bottom: 4px solid whitesmoke;
+}
+
+body.night article:focus {
+    border-bottom: 4px solid whitesmoke;
+}
