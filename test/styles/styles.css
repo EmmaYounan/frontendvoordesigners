@@ -94,15 +94,6 @@ body header button {
     transition: all 1s;
 }
 
-body header button:focus {
-    background-color: darkgray;
-}
-
-body header button:hover {
-    background-color: darkgray;
-}
-
-
 header span p {
     font-family: sans-serif;
     font-size: 0.8em;
@@ -160,6 +151,14 @@ body.night header button {
     transition: all 1s;
 }
 
+body header button:focus {
+    background-color: lightgray;
+}
+
+body header button:hover {
+    background-color: lightgray;
+}
+
 body.night article:hover {
     border-bottom: 4px solid whitesmoke;
 }
@@ -188,4 +187,12 @@ body.night a button {
     background-image: url(../images/610322.png);
     background-color: blueviolet;
     box-shadow: 0.1em 0.1em 0.5em 0.1em darkviolet;
+}
+
+body a button:hover {
+    background-color: lightgray;
+}
+
+body a button:hover {
+    background-color: lightgray;
 }
