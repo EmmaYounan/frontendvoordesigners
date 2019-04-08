@@ -2,7 +2,7 @@ section {
     display: grid;
     grid-template-columns: 3fr 3fr;
     grid-gap: 2em;
-    margin: 3em;
+    margin: 6em;
     margin-top: 0em;
 }
 
@@ -42,6 +42,11 @@ h1 {
     margin-top: 0em;
     font-family: sans-serif;
     margin-top: 1.3em;
+    color: blueviolet;
+    transform: rotate(-90deg);
+    position: fixed;
+    left: -5em;
+    bottom: 9em;
 }
 
 section article p:first-of-type {
@@ -63,16 +68,17 @@ section article h2 {
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
     margin-left: 4em;
     margin-right: 4em;
     margin-top: 2em;
+    margin-bottom: 8em;
 }
 
 header span {
     display: flex;
     flex-direction: column;
+    position: absolute;
+    right: 7em;
 }
 
 body header button {
@@ -160,4 +166,26 @@ body.night article:hover {
 
 body.night article:focus {
     border-bottom: 4px solid whitesmoke;
+}
+
+body a button {
+    background-image: url(../images/61032.png);
+    background-repeat: no-repeat;
+    background-size: 3em;
+    background-position: center;
+    border-radius: 50%;
+    width: 5em;
+    height: 5em;
+    background-color: white;
+    box-shadow: 0.1em 0.1em 0.5em 0.1em lightgray;
+    position: fixed;
+    bottom: 3em;
+    right: 3em;
+    border: none;
+}
+
+body.night a button {
+    background-image: url(../images/610322.png);
+    background-color: blueviolet;
+    box-shadow: 0.1em 0.1em 0.5em 0.1em darkviolet;
 }
