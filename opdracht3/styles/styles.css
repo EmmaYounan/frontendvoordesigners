@@ -1,39 +1,76 @@
-section {
-    display: grid;
-    grid-template-columns: 3fr 3fr;
-    grid-gap: 2em;
-    margin: 6em;
+* {
+    box-sizing: border-box;
+}
+
+body {
     margin-top: 0em;
 }
 
+section {
+    display: none;
+    margin: 6em;
+    margin-top: 0em;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-scroll-snap-destination: 0% 0%;
+    -webkit-overflow-scrolling: touch;
+    margin-left: 8em;
+    margin-right: 5em;
+    height: 100vh;
+}
+
+body main section::-webkit-scrollbar {
+    display: none;
+}
+
+iframe {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 85%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    box-sizing: border-box;
+}
+
+iframe.vershcijnen {
+    display: block;
+}
+
 article {
-    background-color: white;
-    box-shadow: 0.1em 0.1em 0.5em 0.1em lightgray;
-    padding: 1em;
-    margin: 1em;
+    width: 25em;
+    flex: 0 0 auto;
+    margin-right: 0.625em;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: center;
+    height: 31em;
     position: relative;
+    border: 6px solid black;
+    margin-left: 1em;
+    position: relative;
+    margin-top: 5em;
+}
+
+.card-front {
     padding-left: 2em;
     padding-right: 2em;
-    opacity: 0;
-    transition: all 1s;
 }
 
-article.show {
-    opacity: 1;
-    transition: all 1s;
+.card-back {
+    background-size: cover;
 }
 
-article:nth-of-type(1),
-article:nth-of-type(2) {
-    opacity: 1;
-}
-
-article:hover {
-    border-bottom: 4px solid blueviolet;
-}
-
-article:focus {
-    border-bottom: 4px solid blueviolet;
+.icon-picture {
+    position: absolute;
+    bottom: 1.5em;
+    right: 2em;
+    width: 2em;
 }
 
 h1 {
@@ -42,11 +79,11 @@ h1 {
     margin-top: 0em;
     font-family: sans-serif;
     margin-top: 1.3em;
-    color: blueviolet;
+    color: black;
     transform: rotate(-90deg);
     position: fixed;
-    left: -5em;
-    bottom: 9em;
+    left: -4.2em;
+    bottom: 7.3em;
 }
 
 section article p:first-of-type {
@@ -54,50 +91,48 @@ section article p:first-of-type {
     font-family: sans-serif;
     font-size: 1em;
     line-height: 1.5em;
-}
-
-section article p:last-of-type {
-    bottom: 1em;
-    position: absolute;
-    color: blueviolet;
-    font-size: 1em;
+    margin-top: 2em;
 }
 
 section article h2 {
-    font-family: sans-serif;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 header {
     margin-left: 4em;
     margin-right: 4em;
-    margin-top: 2em;
-    margin-bottom: 8em;
+    margin-top: 1em;
+    margin-bottom: 3em;
 }
 
 header span {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     position: absolute;
-    right: 7em;
+    right: 5.5em;
 }
 
 body header button {
     height: 4em;
     width: 10em;
     background-color: transparent;
-    border: none;
-    box-shadow: 0.1em 0.1em 0.5em 0.1em lightgray;
+    border: 6px solid black;
     background-image: url(../images/sun.png);
     background-repeat: no-repeat;
     background-position: 1em;
-    background-size: 3em;
+    background-size: 2.8em;
     transition: all 1s;
+    margin-left: 1em;
 }
 
 header span p {
     font-family: sans-serif;
     font-size: 0.8em;
-    width: 10em;
+    width: 18em;
     line-height: 1.4em;
 }
 
@@ -110,12 +145,6 @@ body.night {
 body.night h1 {
     color: whitesmoke;
     transition: all 1s;
-}
-
-body.night article {
-    background-color: blueviolet;
-    transition: all 1s;
-    box-shadow: 0.1em 0.1em 0.5em 0.1em darkviolet;
 }
 
 body.night article p {
@@ -138,61 +167,182 @@ body.night section article p {
     color: whitesmoke;
 }
 
+body.night section article button {
+    color: whitesmoke;
+}
+
+body.night section article button:hover {
+    color: whitesmoke;
+    font-weight: 700;
+}
+
 body.night header button {
     height: 4em;
     width: 10em;
-    background-color: blueviolet;
-    border: none;
-    box-shadow: 0.1em 0.1em 0.5em 0.1em darkviolet;
+    background-color: transparent;
+    border: 6px solid whitesmoke;
     background-image: url(../images/moon.png);
     background-repeat: no-repeat;
     background-position: 6em;
-    background-size: 3em;
+    background-size: 2.6em;
+    transition: all 1s;
+}
+
+body.night header button:focus {
+    height: 4em;
+    width: 10em;
+    background-color: whitesmoke;
+    border: 6px solid whitesmoke;
+    background-image: url(../images/moon-hover.png);
+    background-repeat: no-repeat;
+    background-position: 6em;
+    background-size: 2.6em;
+    transition: all 1s;
+}
+
+body.night header button:hover {
+    height: 4em;
+    width: 10em;
+    background-color: whitesmoke;
+    border: 6px solid whitesmoke;
+    background-image: url(../images/moon-hover.png);
+    background-repeat: no-repeat;
+    background-position: 6em;
+    background-size: 2.6em;
     transition: all 1s;
 }
 
 body header button:focus {
-    background-color: lightgray;
+    background-color: black;
+    background-image: url(../images/sun-hover.png);
+    background-repeat: no-repeat;
+    background-position: 1em;
+    background-size: 2.8em;
+    transition: all 1s;
 }
 
 body header button:hover {
-    background-color: lightgray;
-}
-
-body.night article:hover {
-    border-bottom: 4px solid whitesmoke;
-}
-
-body.night article:focus {
-    border-bottom: 4px solid whitesmoke;
-}
-
-body a button {
-    background-image: url(../images/61032.png);
+    background-color: black;
+    background-image: url(../images/sun-hover.png);
     background-repeat: no-repeat;
-    background-size: 3em;
-    background-position: center;
-    border-radius: 50%;
-    width: 5em;
-    height: 5em;
-    background-color: white;
-    box-shadow: 0.1em 0.1em 0.5em 0.1em lightgray;
-    position: fixed;
-    bottom: 3em;
-    right: 3em;
+    background-position: 1em;
+    background-size: 2.8em;
+    transition: all 1s;
+
+}
+
+article button:last-of-type {
+    color: black;
     border: none;
+    background-color: transparent;
+    bottom: 3em;
+    position: absolute;
+    left: 2rem;
+    bottom: 2rem;
+    font-size: 1em;
+    padding: 0;
+    text-align: left;
+    width: 18em;
 }
 
-body.night a button {
-    background-image: url(../images/610322.png);
-    background-color: blueviolet;
-    box-shadow: 0.1em 0.1em 0.5em 0.1em darkviolet;
+article button:last-of-type:hover {
+    font-weight: 700;
 }
 
-body a button:hover {
-    background-color: lightgray;
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
 }
 
-body a button:hover {
-    background-color: lightgray;
+.img-button{
+    width: 4em;
+    height: 4em;
+    color: black;
+    font-size: .7em;
+    font-weight: bold;
+    border: 6px solid black;
+    padding: 5px;
+    padding-top: 9px;
+}
+
+.img-button:hover{
+    width: 4em;
+    height: 4em;
+    color: whitesmoke;
+    font-size: .7em;
+    background-color: black;
+    font-weight: bold;
+    border: 6px solid black;
+    padding: 5px;
+    padding-top: 9px;
+}
+
+body.night .img-button{
+    width: 4em;
+    height: 4em;
+    color: whitesmoke;
+    font-size: .7em;
+    font-weight: bold;
+    border: 6px solid whitesmoke;
+    padding: 5px;
+    padding-top: 9px;
+}
+
+body.night .img-button:hover{
+    width: 4em;
+    height: 4em;
+    color: black;
+    font-size: .7em;
+    font-weight: bold;
+    background-color: whitesmoke;
+    border: 6px solid whitesmoke;
+    padding: 5px;
+    padding-top: 9px;
+}
+
+
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+
+article.card-flip .card-inner {
+    transform: rotateY(180deg);
+}
+
+article.card-flip .card-inner iframe {
+    display: none;
+}
+
+/* Position the front and back side */
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+
+.card-front {
+    color: black;
+}
+
+/* Style the back side */
+
+.card-back {
+    background-image: white;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+body.night article {
+    /*    background-color: blueviolet !important;*/
+    background-color: transparent;
+    transition: all 1s;
+    /*    box-shadow: 0.1em 0.1em 0.5em 0.1em darkviolet;*/
+    border: 6px solid whitesmoke;
 }

@@ -86,3 +86,9 @@ function inView() {
 
 inView();
 document.addEventListener('scroll', inView);
+
+
+//var images = document.createElement('img');
+//        images.src = activiteiten[i].media[0].url;
+
+//article.appendChild(images);

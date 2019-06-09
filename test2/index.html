@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <div id="example">
+        <carousel-3d :inverse-scaling="1500" :space="800">
+            <slide v-for="(slide, i) in slides" :index="i">
+                <span class="title">You know</span>
+                <p>You know, being a test pilot isn't always the healthiest business in the world.</p>
+            </slide>
+        </carousel-3d>
+    </div>
+
+<script src="script/script.js"></script>
+</body>
