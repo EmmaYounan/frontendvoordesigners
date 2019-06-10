@@ -331,6 +331,7 @@ article.card-flip .card-inner iframe {
 
 .card-front {
     color: black;
+    background-color:white;
 }
 
 /* Style the back side */
