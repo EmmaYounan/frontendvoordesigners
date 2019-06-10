@@ -61,7 +61,6 @@ article {
 .card-front {
     padding-left: 2em;
     padding-right: 2em;
-    background-color: white;
 }
 
 .card-back {
@@ -331,7 +330,6 @@ article.card-flip .card-inner iframe {
 
 .card-front {
     color: black;
-    background-color:white;
 }
 
 /* Style the back side */
