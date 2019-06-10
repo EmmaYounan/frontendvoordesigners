@@ -337,14 +337,14 @@ article.card-flip .card-inner iframe {
 /* Style the back side */
 
 .card-back {
-    background-image: white;
+    background-color: white;
     color: white;
     transform: rotateY(180deg);
 }
 
 body.night article {
     /*    background-color: blueviolet !important;*/
-    background-color: transparent;
+    background-color: transparent !important;
     transition: all 1s;
     /*    box-shadow: 0.1em 0.1em 0.5em 0.1em darkviolet;*/
     border: 6px solid whitesmoke;
