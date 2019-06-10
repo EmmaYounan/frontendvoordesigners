@@ -55,11 +55,13 @@ article {
     margin-left: 1em;
     position: relative;
     margin-top: 5em;
+    background-color: white;
 }
 
 .card-front {
     padding-left: 2em;
     padding-right: 2em;
+    background-color: white;
 }
 
 .card-back {
